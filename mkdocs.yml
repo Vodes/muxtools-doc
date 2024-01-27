@@ -44,7 +44,16 @@ nav:
               - files: muxtools/utils/files.md
               - glob: muxtools/utils/glob.md
               - types: muxtools/utils/types.md
-
+    - vs-muxtools (modules):
+          - extension: vs-muxtools/extension.md
+          - video:
+              - encoders: vs-muxtools/video/encoders.md
+              - settings: vs-muxtools/video/settings.md
+              - testing: vs-muxtools/video/testing.md
+          - utils:
+              - audio: vs-muxtools/utils/audio.md
+              - src: vs-muxtools/utils/src.md
+              - types: vs-muxtools/utils/types.md
 plugins:
 - search
 - mkdocstrings:
@@ -54,6 +63,7 @@ plugins:
           docstring_style: "sphinx"
           show_symbol_type_heading: true
           show_symbol_type_toc: true
+
 
 markdown_extensions:
   - pymdownx.highlight:

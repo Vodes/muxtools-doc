@@ -2,4 +2,4 @@
     options:
       inherited_members: true
       show_if_no_docstring: true
-      members: ["_track", "VideoTrack", "VT", "AudioTrack", "AT", "SubTrack", "ST", "Premux", "Attachment"]
+      members: ["_track", "VideoTrack", "VT", "AudioTrack", "AT", "SubTrack", "ST", "Premux", "MkvTrack", "Attachment"]
