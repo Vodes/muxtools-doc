@@ -18,6 +18,9 @@ nav:
       - Getting started: guide/getting-started.md
       - Video Encoding: guide/encode-video.md
       - Audio Encoding: guide/encode-audio.md
+      - Subtitles & Chapters: guide/subtitles-and-chapters.md
+      - Muxing & TMDB: guide/muxing-tmdb.md
+    - Examples: examples.md
     - muxtools (modules):
           - main: muxtools/main.md
           - audio:
@@ -33,6 +36,7 @@ nav:
               - tmdb: muxtools/muxing/tmdb.md
               - tracks: muxtools/muxing/tracks.md
           - subtitle:
+              - sub: muxtools/subtitle/sub.md
               - styles: muxtools/subtitle/styles.md
               - subutils: muxtools/subtitle/subutils.md
           - utils:

@@ -93,7 +93,7 @@ Currently implemented are:
   To change sample rate or bitdepth
 
 - Downmix / Pan<br>
-  The ffmpeg [pan](http://ffmpeg.org/ffmpeg-all.html#pan-1) filter with a few [presets](/Irrational-Encoding-Wizardry/muxtools/blob/master/muxtools/audio/preprocess.py#L95) for better/more dynamic downmixing
+  The ffmpeg [pan](http://ffmpeg.org/ffmpeg-all.html#pan-1) filter with a few [presets](/muxtools/audio/preprocess/#muxtools.audio.preprocess.Downmix.ATSC) for better/more dynamic downmixing
 
 - Loudnorm<br>
   A ffmpeg based normalization implementation according to EBU-R128 standards.<br>
