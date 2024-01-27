@@ -20,9 +20,26 @@ nav:
       - Audio Encoding: guide/encode-audio.md
     - muxtools (modules):
           - main: muxtools/main.md
+          - audio:
+              - audioutils: muxtools/audio/audioutils.md
+              - encoders: muxtools/audio/encoders.md
+              - extractors: muxtools/audio/extractors.md
+              - memecoders: muxtools/audio/memecoders.md
+              - preprocess: muxtools/audio/preprocess.md
+              - tools: muxtools/audio/tools.md
+          - chapters: muxtools/chapters.md
+          - muxing:
+              - mux: muxtools/muxing/mux.md
+              - tmdb: muxtools/muxing/tmdb.md
+              - tracks: muxtools/muxing/tracks.md
+          - subtitle:
+              - styles: muxtools/subtitle/styles.md
+              - subutils: muxtools/subtitle/subutils.md
           - utils:
-              - convert: muxtools/utils-convert.md
-              - files: muxtools/utils-files.md
+              - convert: muxtools/utils/convert.md
+              - files: muxtools/utils/files.md
+              - glob: muxtools/utils/glob.md
+              - types: muxtools/utils/types.md
 
 plugins:
 - search
