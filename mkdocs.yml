@@ -54,6 +54,8 @@ nav:
               - audio: vs-muxtools/utils/audio.md
               - src: vs-muxtools/utils/src.md
               - types: vs-muxtools/utils/types.md
+    - Unrelated Stuff:
+          - How to no config issue: misc/config-issue.md
 plugins:
 - search
 - mkdocstrings:
