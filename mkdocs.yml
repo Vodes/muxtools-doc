@@ -54,6 +54,16 @@ nav:
               - audio: vs-muxtools/utils/audio.md
               - src: vs-muxtools/utils/src.md
               - types: vs-muxtools/utils/types.md
+    - vodesfunc (modules):
+          - aa: vodesfunc/aa.md
+          - denoise: vodesfunc/denoise.md
+          - descale: vodesfunc/descale.md
+          - rescale: vodesfunc/rescale.md
+          - scale: vodesfunc/scale.md
+          - spikefinder: vodesfunc/spikefinder.md
+          - misc: vodesfunc/misc.md
+          - types: vodesfunc/types.md
+          - util: vodesfunc/util.md
     - Unrelated Stuff:
           - How to no config issue: misc/config-issue.md
 plugins:
