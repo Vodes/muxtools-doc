@@ -22,5 +22,6 @@ jobs:
           python -m pip install --user mkdocs-material mkdocstrings[python]
           python -m pip install --user git+https://github.com/Jaded-Encoding-Thaumaturgy/muxtools.git
           python -m pip install --no-deps --user git+https://github.com/Jaded-Encoding-Thaumaturgy/vs-muxtools.git
+          python -m pip install --no-deps --user git+https://github.com/Vodes/vodesfunc.git
       - name: Build and deploy site
         run: mkdocs gh-deploy --force
