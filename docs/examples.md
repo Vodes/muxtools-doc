@@ -151,12 +151,13 @@ if is_preview():
     out(KAIZOKU.src_cut[:2] + KAIZOKU.src_cut, "Kaizoku")
     print(lol_deband)
 else:
+    settings = sb265(7, 13.7, rect=False, tskip=True, append="--aq-bias-strength 0.9")
     zones = [(a, b, 1.2) for a, b in zone_up]
     zones.extend([(a, b, 1.1) for a, b in zone_slightly])
     zones.extend([(a, b, 0.8) for a, b in zone_down])
 
     jp, en, de = encode_audio(ITBD, 1), encode_audio(UKBD), encode_audio(DEBD)
-    video = x265(sb265(7, 13.7, rect=False, tskip=True, append="--aq-bias-strength 0.9"), zones, qp_clip=ITBD).encode(filtered[0])
+    video = x265(settings, zones, qp_clip=ITBD).encode(filtered[0])
     mux(
         video.to_track("Vodes Encode"),
         jp.to_track("Japanese 2.0"),
