@@ -36,6 +36,7 @@ nav:
               - tmdb: muxtools/muxing/tmdb.md
               - tracks: muxtools/muxing/tracks.md
           - subtitle:
+              - basesub: muxtools/subtitle/basesub.md
               - sub: muxtools/subtitle/sub.md
               - styles: muxtools/subtitle/styles.md
               - subutils: muxtools/subtitle/subutils.md
