@@ -38,11 +38,19 @@ mux(
 This package has a TMDB Integration so you can have episode titles and other [various metadata](/muxtools/muxing/tmdb/#muxtools.muxing.tmdb.TmdbConfig) in your mux.
 
 ```py
-from vsmuxtools import mux, TitleTMDB, TmdbConfig
+from vsmuxtools import mux, TitleTMDB, TmdbConfig, TMDBOrder
 
 # This is useful for if you don't really care about any of the other metadata besides the ep title.
 mux(..., tmdb=TitleTMDB(117465))
 
 # Otherwise you can have fun with every option using this
 mux(..., tmdb=TmdbConfig(117465, write_date=True, write_ids=True, write_summary=True))
+
+# You can also use episode groups/orders via their ID
+# This for example selects the *proper* season 2 for jujutsu kaisen.
+mux(..., tmdb=TmdbConfig(95479, 2, order="64a3fc4fe9da6900ae2fa807"))
+
+# or auto-select an them using the enum
+# Automatically fetches the same ID as the example right above this.
+mux(..., tmdb=TmdbConfig(95479, 2, order=TMDBOrder.PRODUCTION))
 ```
