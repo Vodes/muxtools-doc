@@ -63,7 +63,6 @@ nav:
           - scale: vodesfunc/scale.md
           - spikefinder: vodesfunc/spikefinder.md
           - misc: vodesfunc/misc.md
-          - types: vodesfunc/types.md
           - util: vodesfunc/util.md
     - Unrelated Stuff:
           - How to no config issue: misc/config-issue.md
