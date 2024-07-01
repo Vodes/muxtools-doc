@@ -42,6 +42,7 @@ nav:
               - subutils: muxtools/subtitle/subutils.md
           - utils:
               - convert: muxtools/utils/convert.md
+              - dataclass: muxtools/utils/dataclass.md
               - files: muxtools/utils/files.md
               - glob: muxtools/utils/glob.md
               - types: muxtools/utils/types.md
