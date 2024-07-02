@@ -49,13 +49,16 @@ nav:
     - vs-muxtools (modules):
           - extension: vs-muxtools/extension.md
           - video:
-              - encoders: vs-muxtools/video/encoders.md
+              - encoders:
+                - base: vs-muxtools/video/encoders/base.md
+                - standlone: vs-muxtools/video/encoders/standalone.md
+                - ffmpeg: vs-muxtools/video/encoders/ffmpeg.md
+                - types: vs-muxtools/video/encoders/types.md
               - settings: vs-muxtools/video/settings.md
               - testing: vs-muxtools/video/testing.md
           - utils:
               - audio: vs-muxtools/utils/audio.md
               - src: vs-muxtools/utils/src.md
-              - types: vs-muxtools/utils/types.md
     - vodesfunc (modules):
           - aa: vodesfunc/aa.md
           - denoise: vodesfunc/denoise.md

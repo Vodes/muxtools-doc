@@ -1,3 +1,3 @@
-::: vsmuxtools.video.encoders
+::: vsmuxtools.video.encoders.ffmpeg
     options:
       members_order: "source"
