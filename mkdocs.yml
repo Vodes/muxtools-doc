@@ -70,6 +70,7 @@ nav:
           - util: vodesfunc/util.md
     - Unrelated Stuff:
           - How to no config issue: misc/config-issue.md
+          - Wav/PCM Ramblings: misc/wav-and-friends.md
 plugins:
 - search
 - mkdocstrings:
@@ -91,3 +92,5 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.details
+  - footnotes
