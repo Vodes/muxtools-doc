@@ -85,7 +85,7 @@ With FLAC you get a more concrete spec that software is less likely to misinterp
     ffmpeg -i "$input" -c:a flac -compression_level 0 "out.flac"
     ```
 
-[^1]: [https://gearspace.com/board/music-computers/1086321-do-you-use-rf64.html](https://gearspace.com/board/music-computers/1086321-do-you-use-rf64.html)
+[^1]: [https://gearspace.com/board/music-computers/1086321-do-you-use-rf64.html](https://gearspace.com/board/showpost.php?p=11904701&postcount=2)
 [^2]: [https://forums.cockos.com/showpost.php?s=10bbd1b868d37f653ec4e36a6de1cb5a&p=1845069&postcount=2](https://forums.cockos.com/showpost.php?s=10bbd1b868d37f653ec4e36a6de1cb5a&p=1845069&postcount=2)
 [^3]: [Bjorn Roche - WAVE64 vs RF64 vs CAF](https://web.archive.org/web/20231210135558/http://blog.bjornroche.com/2009/11/wave64-vs-rf64-vs-caf.html)
 [^4]: [https://trptk.com/one-wav-or-the-other-wav-formats-explained](https://trptk.com/one-wav-or-the-other-wav-formats-explained)
