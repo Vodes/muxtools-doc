@@ -73,7 +73,7 @@ From my own experience and from what I gathered in various forum posts[^1][^2] a
 If your software supports it... you should just **use FLAC**.<br>
 There's no gamble if it supports one or any of the 64-bit WAV extensions/deviations. It usually either supports FLAC or it doesn't.
 
-With FLAC you get a more concrete spec that software is less likely to misinterpret and other things[^5] less useful for the purpose of heaving an intermediary file.
+With FLAC you get a more concrete spec that software is less likely to misinterpret and other things[^5] less useful for the purpose of having an intermediary file.
 
 ??? info "Usage"
     
