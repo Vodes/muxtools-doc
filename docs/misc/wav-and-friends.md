@@ -73,7 +73,8 @@ From my own experience and from what I gathered in various forum posts[^1][^2] a
 If your software supports it... you should just **use FLAC**.<br>
 There's no gamble if it supports one or any of the 64-bit WAV extensions/deviations. It usually either supports FLAC or it doesn't.
 
-With FLAC you get a more concrete spec that software is less likely to misinterpret and other things[^5] less useful for the purpose of having an intermediary file.
+With FLAC you get a more concrete spec that software is less likely to misinterpret and other things[^5] less useful for the purpose of having an intermediary file.<br>
+If you just want a file to input to something else, low compression levels are actually ridiculously fast[^6] to encode on modern hardware!
 
 ??? info "Usage"
     
@@ -90,3 +91,4 @@ With FLAC you get a more concrete spec that software is less likely to misinterp
 [^3]: [Bjorn Roche - WAVE64 vs RF64 vs CAF](https://web.archive.org/web/20231210135558/http://blog.bjornroche.com/2009/11/wave64-vs-rf64-vs-caf.html)
 [^4]: [https://trptk.com/one-wav-or-the-other-wav-formats-explained](https://trptk.com/one-wav-or-the-other-wav-formats-explained)
 [^5]: Integrity checks in the encoder and error detection in the decoder, actual metadata support, obviously lossless compression
+[^6]: Like 2 seconds to encode an anime episode's audio (24 minutes) with `flac -0` on my machine
