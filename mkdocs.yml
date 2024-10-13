@@ -20,6 +20,7 @@ nav:
       - Audio Encoding: guide/encode-audio.md
       - Subtitles & Chapters: guide/subtitles-and-chapters.md
       - Muxing & TMDB: guide/muxing-tmdb.md
+      - Dynamic Dataclasses: guide/dynamic-dataclasses.md
     - Examples: examples.md
     - muxtools (modules):
           - main: muxtools/main.md
@@ -60,6 +61,8 @@ nav:
               - audio: vs-muxtools/utils/audio.md
               - src: vs-muxtools/utils/src.md
     - vodesfunc (modules):
+          - rescale_ext:
+              - mixed_rescale: vodesfunc/mixed_rescale.md
           - aa: vodesfunc/aa.md
           - denoise: vodesfunc/denoise.md
           - descale: vodesfunc/descale.md
@@ -82,6 +85,9 @@ plugins:
           docstring_style: "sphinx"
           show_symbol_type_heading: true
           show_symbol_type_toc: true
+          extensions:
+            - griffe_pydantic:
+              schema: true
 
 
 markdown_extensions:
