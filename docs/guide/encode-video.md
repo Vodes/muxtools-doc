@@ -1,8 +1,7 @@
 # Video Encoding
 
 ## x264 & x265
-The only two lossy encoders you should need.<br>
-Mostly only x265 tbh.<br>
+Lossy encoders targetting quality.
 These two also support resuming from previous parts of the encode in case it crashed or whatever. <br>
 It's done somewhat automagically and you don't really have to worry about it.
 
@@ -13,6 +12,11 @@ Basically *the* lossless codec to use. Supports just about everything and has wa
 ## LosslessX264
 Another option for lossless encodes.<br>
 Way worse compression than FFV1 but also way faster. Limited to 10 bit video.
+
+## SVTAV1
+An AV1 encoder that has proper threading capabilities standalone and is still competitive with others.
+You can of course use [SVT-AV1-PSY](https://github.com/gianni-rosato/svt-av1-psy) with muxtools too.
+
 ---------
 ## Basic Usage
 ```py
@@ -60,3 +64,33 @@ All of those `video_*` variables return a `VideoFile` object.<br>
 To get the filepath you simply do `video_hevc.file`.<br><br>
 Here you can also have your first look at the `to_track()` function of the `*File` types.<br>
 These convert the File types to their respective track types. This will be needed for muxing later.
+
+-------
+
+## Intermediaries
+
+vs-muxtools **0.2.0+** has convenience classes for creating an intermediary and encoding that to one or many targets.
+
+```py
+# Encode clip to FFV1 first and then to the list of encoders (x265 and SVTAV1)
+IntermediaryEncoder(
+    LosslessX264(LosslessPreset.SPEED),
+    [
+        x265(settings_builder_x265("veryslow", 13.5)),
+        SVTAV1(4, 18),
+    ],
+).encode(clip)
+
+# Can also do something like this
+
+IntermediaryEncoder(
+    LosslessX264(LosslessPreset.SPEED),
+    [
+        x265(settings_builder_x265("veryslow", 13.5)),
+        (SVTAV1(4, 18), lambda clip: Hermite.scale(clip, 1280, 720)), # Downscales the intermediary and outputs that to SVTAV1
+    ],
+).encode(clip)
+```
+
+There's also a standalone [ProResIntermediary](/vs-muxtools/video/encoders/intermediary/#vsmuxtools.video.encoders.intermediary.ProResIntermediary) class that automatically handles conversion to and from 422.<br>
+The approach may still be very flawed but it didn't cause issues at a quick glance.

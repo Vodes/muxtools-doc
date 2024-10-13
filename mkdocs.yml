@@ -54,6 +54,7 @@ nav:
                 - base: vs-muxtools/video/encoders/base.md
                 - standlone: vs-muxtools/video/encoders/standalone.md
                 - ffmpeg: vs-muxtools/video/encoders/ffmpeg.md
+                - intermediary: vs-muxtools/video/encoders/intermediary.md
                 - types: vs-muxtools/video/encoders/types.md
               - settings: vs-muxtools/video/settings.md
               - testing: vs-muxtools/video/testing.md
