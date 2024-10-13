@@ -8,10 +8,11 @@
 You only really need x264 and x265, depending on what you wanna use.<br>
 I recommend these specific versions. Easily buildable on any platform if you're not on windows.
 
-- [x265-aMod](https://github.com/DJATOM/x265-aMod)** (by DJATOM)
-- [x264-aMod](https://github.com/DJATOM/x264-aMod)** (by DJATOM)
+- [x265-aMod](https://github.com/DJATOM/x265-aMod/releases)** (by DJATOM)
+- [x264 t_mod](https://github.com/jpsdr/x264/releases)**
+- [SVT-AV1-PSY](https://github.com/gianni-rosato/svt-av1-psy/releases)***
 
-FFV1 is included with FFMPEG (see below)
+FFV1 & ProRes are included with FFMPEG (see below)
 
 ## Other Utilities
 
@@ -20,7 +21,7 @@ FFV1 is included with FFMPEG (see below)
   It's used for TTA, FLAC, W64 and AIFF audio encoding and also ensures valid input for every other encoder.<br>
   Also used to extract existing audio track from other releases/containers.<br>
   Oh and of course used for FFV1 lossless video encoding.<br><br>
-  If you're interested in AAC encoding via [FDK AAC](https://trac.ffmpeg.org/wiki/Encode/AAC#fdk_aac) you might be interested in non-free builds like [these](https://github.com/AnimMouse/ffmpeg-autobuild/releases) on GitHub or [those](https://scoop.sh/#/apps?q=ffmpeg-nonfree) on scoop.
+  If you're interested in AAC encoding via [FDK AAC](https://trac.ffmpeg.org/wiki/Encode/AAC#fdk_aac) you might be interested in non-free builds like [my own](https://github.com/Vodes/FFmpeg-Builds) on GitHub or [on scoop](https://scoop.sh/#/apps?q=ffmpeg+ytdlp+nonfree).
 - [eac3to](https://www.videohelp.com/software/eac3to)
 - [SoX](https://sox.sourceforge.net/)*
 - [MKVToolNix](https://mkvtoolnix.download/downloads.html)/mkvmerge/mkvextract*
