@@ -1,7 +1,7 @@
 # Dynamic Dataclasses
 
 Since (vs-)muxtools **0.2.0** all video and audio encoders use [pydantic dataclasses](https://docs.pydantic.dev/latest/concepts/dataclasses/).<br>
-These allow us to pass kwargs to them.
+These allow users to pass kwargs to them.
 
 These kwargs are used to pass custom params to the encoder processes.<br>
 Have a look at part of the `CLIKwargs` class docstring here:
