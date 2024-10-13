@@ -26,7 +26,8 @@ FFV1 & ProRes are included with FFMPEG (see below)
 - [SoX](https://sox.sourceforge.net/)*
 - [MKVToolNix](https://mkvtoolnix.download/downloads.html)/mkvmerge/mkvextract*
 - [opus-tools](https://www.opus-codec.org/downloads/)<br>
-  Used for opus encoding
+  Used for opus encoding.<br>
+  The official builds are yet to receive any updates for whatever reason so for the time being I'd recommend getting builds from [rarewares](https://www.rarewares.org/opus.php).
 - [qaac](https://github.com/nu774/qaac/releases)<br>
   The best encoder for AAC, but it does ALAC aswell.<br>
   This one has a few quirks, like needing iTunes either installed or its libraries.<br>
