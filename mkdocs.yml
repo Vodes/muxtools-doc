@@ -66,7 +66,6 @@ nav:
               - mixed_rescale: vodesfunc/mixed_rescale.md
           - aa: vodesfunc/aa.md
           - denoise: vodesfunc/denoise.md
-          - descale: vodesfunc/descale.md
           - rescale: vodesfunc/rescale.md
           - scale: vodesfunc/scale.md
           - spikefinder: vodesfunc/spikefinder.md
@@ -80,8 +79,10 @@ plugins:
 - mkdocstrings:
     handlers:
       python:
-        import:
+        inventories:
           - https://docs.python.org/3/objects.inv
+          - https://www.vapoursynth.com/doc/objects.inv
+          - https://jaded-encoding-thaumaturgy.github.io/vs-jetpack/objects.inv
         options:
           docstring_style: "sphinx"
           show_symbol_type_heading: true
