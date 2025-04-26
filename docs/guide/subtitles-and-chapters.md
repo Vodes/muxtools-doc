@@ -5,7 +5,7 @@ It would probably take a lot of time to explain them here again so go read the d
 
 ### Basic Usage
 ```py
-from vsmuxtools import SubFile, GJM_GANDHI_PRESET, GlobSearch, dummy_video
+from muxtools import SubFile, GJM_GANDHI_PRESET, GlobSearch, dummy_video
 
 # Might be worth noting that none of this touches the original input file
 # A copy to the work directory is always the first step
@@ -13,7 +13,6 @@ from vsmuxtools import SubFile, GJM_GANDHI_PRESET, GlobSearch, dummy_video
 subtitle = SubFile(R"test.ass") \
     .resample("random video.mkv") \
     .restyle(GJM_GANDHI_PRESET) \
-    .merge("opening.ass", "opsync") \
     .clean_styles()
 
 # Also possible to resample with a dummy video
@@ -32,6 +31,29 @@ fonts = subtitle.collect_fonts()
 
 All of those `subtitle` variables are a `SubFile` object.<br>
 To get the filepath you simply do `subtitle.file`.<br><br>
+
+#### Merging and shifting
+Shifting and merging with syncs *should* be done with timestamps.<br>
+You can pass a `timesource` to every function that works with frame <-> conversions.<br>
+Subtitles specifically can also fetch a default from the `Setup`. [See docs](/muxtools/main/#muxtools.main.Setup.set_default_sub_timesource).
+
+If you never set one in either the functions or the Setup it will assume FPS timestamps with `24000/1001` and a timescale that's the usual on MKV files.<br>
+And also print a warning because you probably shouldn't be doing that.
+
+```py
+subtitle.merge(
+    "./songs/OP.ass", 
+    "opsync", # Syncpoint in your current subtitle object/file
+    "sync", # Syncpoint in the OP file. If none given this will just be the first non-comment line (sorted by start time)
+    timesource="./premux/01.mkv" # Where to take the timestamps & timescale from.
+)
+```
+
+If you want to match SubKt in its merging with syncpoints behavior you need to set the `shift_mode` param.<br>
+SubKt shifts by `TIME` directly without considering frames or a video file at all.<br>
+You can see the available ones [in the docs](/muxtools/subtitle/basesub/#muxtools.subtitle.basesub.ShiftMode).
+
+There's also a full SubKt project port in the [examples section](/examples/#adapting-a-subkt-project-to-muxtools).
 
 ## Chapters
 
@@ -58,3 +80,9 @@ chapters = Chapters([(0, "Prologue"), (2110, "Opening"), (4268, "Episode"), (329
 # If you don't pass your own output path it will default to "current workdir/chapters.txt"
 chapters.to_file()
 ```
+
+The chapters take a `timesource` and `timescale` param aswell albeit defaulting to FPS timestamps without a warning.<br>
+Using a `src_file` or doing `Chapters.from_mkv` will automatically fetch them from that respective video.
+
+**Chapters will not fetch a default from the setup!**<br>
+(unless you're doing `Chapters.from_sub`)
