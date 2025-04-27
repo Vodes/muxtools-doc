@@ -86,3 +86,18 @@ Using a `src_file` or doing `Chapters.from_mkv` will automatically fetch them fr
 
 **Chapters will not fetch a default from the setup!**<br>
 (unless you're doing `Chapters.from_sub`)
+
+## Also notable
+
+muxtools offers a CLI command for generating a VideoMeta json file.
+
+This may be of interest to you if you want to have all the necessary timestamp information in your fansub git repo.<br>
+Perhaps to then do merges on CI and whatnot.
+
+The usage is literally just: 
+```
+muxtools gen-vm "path/to/your/video.mkv"
+muxtools generate-videometa "video.mkv" "out.json"
+```
+
+Output being optional and, if not given, creating a `video_meta.json` file in your current directory with these samples.
