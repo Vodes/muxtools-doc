@@ -5,4 +5,5 @@
         - ShiftMode
         - ASSHeader
         - BaseSubFile
+        - OutOfBoundsMode
       inherited_members: True
