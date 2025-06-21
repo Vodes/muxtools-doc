@@ -21,7 +21,11 @@ nav:
       - Subtitles & Chapters: guide/subtitles-and-chapters.md
       - Muxing & TMDB: guide/muxing-tmdb.md
       - Dynamic Dataclasses: guide/dynamic-dataclasses.md
-    - Examples: examples.md
+    - Examples:
+      - Example scripts with config: examples/scripts-with-config.md
+      - Example mux without config: examples/random-cyberpunk-mux.md
+      - Adapting a subkt project: examples/adapt-subkt.md
+      - Example encode script: examples/sample-encode-script.md
     - muxtools (modules):
           - main: muxtools/main.md
           - audio:
