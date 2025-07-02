@@ -13,6 +13,13 @@ Here I should maybe also mention the available "tokens" you can use for the file
     You should probably not use this for the mkv title as setting mkv metadata will change the crc.
 - `$title$`<br>
     Token for the episode title. This will only work if you use the [TMDB](#tmdb) integration.
+- `$title_sanitized$`<br>
+    Same as above but with the *title_sanitization* param in [TMDBConfig](/muxtools/muxing/tmdb/#muxtools.muxing.tmdb.TmdbConfig) applied to the string. 
+
+You can also use *any* variable that's declared in Setup as a token.<br>
+This also includes *any* "unknown" ones that you might have configured in the ini file.
+
+For example: If you have a `group_name` variable in the ini or set via [Setup.edit](https://muxtools.vodes.pw/muxtools/main/#muxtools.main.Setup.edit) you can just use `$group_name$` as a token in filenames or titles.
 
 ### Basic Usage
 
