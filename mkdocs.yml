@@ -45,6 +45,9 @@ nav:
               - sub: muxtools/subtitle/sub.md
               - styles: muxtools/subtitle/styles.md
               - subutils: muxtools/subtitle/subutils.md
+          - helpers:
+              - bitstream-filters: muxtools/helpers/bitstream_filters.md
+              - mkvpropedit: muxtools/helpers/mkvpropedit.md
           - utils:
               - convert: muxtools/utils/convert.md
               - dataclass: muxtools/utils/dataclass.md
