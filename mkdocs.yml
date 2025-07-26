@@ -43,6 +43,7 @@ nav:
           - subtitle:
               - basesub: muxtools/subtitle/basesub.md
               - sub: muxtools/subtitle/sub.md
+              - sub-pgs: muxtools/subtitle/sub_pgs.md
               - styles: muxtools/subtitle/styles.md
               - subutils: muxtools/subtitle/subutils.md
           - helpers:
