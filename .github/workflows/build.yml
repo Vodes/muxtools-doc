@@ -13,15 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Prep Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
       - name: Install pip deps
         run: |
-          python -m pip install --user mkdocs-material mkdocstrings[python] griffe-pydantic
-          python -m pip install --user git+https://github.com/Jaded-Encoding-Thaumaturgy/muxtools.git
-          python -m pip install --no-deps --user git+https://github.com/Jaded-Encoding-Thaumaturgy/vs-muxtools.git
-          python -m pip install --no-deps --user git+https://github.com/Vodes/vodesfunc.git
+          uv venv --python 3.11
+          uv pip install mkdocs-material mkdocstrings[python] griffe-pydantic
+          uv pip install git+https://github.com/Jaded-Encoding-Thaumaturgy/muxtools.git
+          uv pip install --no-deps git+https://github.com/Jaded-Encoding-Thaumaturgy/vs-muxtools.git git+https://github.com/Vodes/vodesfunc.git
       - name: Build and deploy site
-        run: mkdocs gh-deploy --force
+        run: uv run mkdocs gh-deploy --force
