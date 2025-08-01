@@ -54,6 +54,8 @@ nav:
               - dataclass: muxtools/utils/dataclass.md
               - files: muxtools/utils/files.md
               - glob: muxtools/utils/glob.md
+              - probe: muxtools/utils/probe.md
+              - formats: muxtools/utils/formats.md
               - types: muxtools/utils/types.md
     - vs-muxtools (modules):
           - extension: vs-muxtools/extension.md
