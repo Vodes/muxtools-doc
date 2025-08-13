@@ -86,6 +86,7 @@ nav:
 plugins:
 - search
 - mkdocstrings:
+    custom_templates: docs/templates
     handlers:
       python:
         inventories:
