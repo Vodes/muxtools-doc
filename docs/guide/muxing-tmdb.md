@@ -27,14 +27,14 @@ Starting with `0.4.1` you can use a couple of predetermined tokens for automatic
 
 | Token    | Meaning | Example | Ambiguous
 | -------- | ------- | ---- | ---- |
-| `$lang$`  | The language tag of a track as-is | `DE` | yes
-| `$lang3$` | The language of a track in its alpha-3 form     | `DEU` | yes
-| `$lang3b$`   | The language of a track in its [bibliographic](https://github.com/georgkrause/langcodes?tab=readme-ov-file#getting-alpha3-codes) alpha-3 form   | `GER`  | yes
 | `$language$`   | The display name for the language of a track    | `German`  | yes
 | `$format$` / `$codec$`   | The format name of a track | `Opus` / `HEVC`  | yes
 | `$bits$` / `$depth$`   | The bitdepth of a *video* or *audio*  track | `10` / `24`  | yes
-| `$res$` / `$resolution$`   | The height of a *video* track | `1080p`  | no
-| `$ch$` / `$channels$`   | The channel layout of an *audio* track | `7.1` / `2.0`  | no
+| `$res$` / `$resolution$`   | The height of a *video* track | `1080p`  | **no**
+| `$ch$` / `$channels$`   | The channel layout of an *audio* track | `7.1` / `2.0`  | **no**
+| `$lang$`  | The language tag of a track as-is | `DE` | yes
+| `$lang3$` | The language of a track in its alpha-3 form     | `DEU` | yes
+| `$lang3b$`   | The language of a track in its [bibliographic](https://github.com/georgkrause/langcodes?tab=readme-ov-file#getting-alpha3-codes) alpha-3 form   | `GER`  | yes
 
 Any of these can be used in both tracks and `out_name` templates.<br>
 ***Not in the mkv title naming for now.***
