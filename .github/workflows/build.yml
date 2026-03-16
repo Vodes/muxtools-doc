@@ -17,7 +17,7 @@ jobs:
         uses: astral-sh/setup-uv@v6
       - name: Install pip deps
         run: |
-          uv venv --python 3.11
+          uv venv --python 3.12
           uv pip install mkdocs-material mkdocstrings[python] griffe-pydantic
           uv pip install git+https://github.com/Jaded-Encoding-Thaumaturgy/muxtools.git
           uv pip install --no-deps git+https://github.com/Jaded-Encoding-Thaumaturgy/vs-muxtools.git git+https://github.com/Vodes/vodesfunc.git
