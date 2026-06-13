@@ -46,6 +46,7 @@ nav:
               - sub-pgs: muxtools/subtitle/sub_pgs.md
               - styles: muxtools/subtitle/styles.md
               - subutils: muxtools/subtitle/subutils.md
+              - font: muxtools/subtitle/font.md
           - helpers:
               - bitstream-filters: muxtools/helpers/bitstream_filters.md
               - mkvpropedit: muxtools/helpers/mkvpropedit.md
