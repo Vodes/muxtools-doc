@@ -12,7 +12,12 @@ setup = Setup("01") # This is just the episode number
 ```
 
 This is used for most if not all workflows in this package and should be set at the start of every script.<br>
-Initially it will prompt you to fill out the generated `config.ini` file.<br>
+It will read any properties out of your `muxtools.toml` or the **muxtools** section in your `pyproject.toml` if you have one.
+
+The toml configuration files can also define any arbitrary keys/values that you can just access from the same setup object like: `print(setup.example_thing)`
+
+To create one you can run `muxtools init`.<br>
+See also the [binary management](binary-management.md) for more details on what this can do.
 
 This will create a work directory under `./_workdir/<episode you passed>`. Every function uses this as its default output.<br>
 If you do decide to not use a Setup it will dump everything in your current directory.

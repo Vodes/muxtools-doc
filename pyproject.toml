@@ -1,0 +1,18 @@
+[project]
+name = "muxtools-doc"
+version = "0.1.0"
+description = "Documentation and guide for muxtools"
+requires-python = ">=3.13"
+dependencies = [
+    "griffe-pydantic",
+    "mkdocstrings-python",
+    "muxtools",
+    "vodesfunc",
+    "vsmuxtools",
+    "zensical>=0.0.60,<0.1",
+]
+
+[tool.uv.sources]
+muxtools = { git = "https://github.com/Jaded-Encoding-Thaumaturgy/muxtools.git" }
+vodesfunc = { git = "https://github.com/Vodes/vodesfunc.git" }
+vsmuxtools = { git = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-muxtools.git" }

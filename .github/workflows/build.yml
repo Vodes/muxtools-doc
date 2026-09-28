@@ -1,25 +1,32 @@
-name: Build 
+name: Documentation
 on:
   push:
-    branches:
-      - master 
-      - main
+    branches: [main, master]
+    paths:
+      - 'docs/**'
+      - 'zensical.toml'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/build.yml'
   workflow_dispatch:
-    
+
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup uv
-        uses: astral-sh/setup-uv@v6
-      - name: Install pip deps
-        run: |
-          uv venv --python 3.12
-          uv pip install mkdocs-material mkdocstrings[python] griffe-pydantic
-          uv pip install git+https://github.com/Jaded-Encoding-Thaumaturgy/muxtools.git
-          uv pip install --no-deps git+https://github.com/Jaded-Encoding-Thaumaturgy/vs-muxtools.git git+https://github.com/Vodes/vodesfunc.git
-      - name: Build and deploy site
-        run: uv run mkdocs gh-deploy --force
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+      - run: uv sync --frozen
+      - run: uv run --frozen zensical build --clean --strict
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - uses: actions/deploy-pages@v5
+        id: deployment
