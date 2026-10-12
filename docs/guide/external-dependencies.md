@@ -28,7 +28,7 @@ FFV1 & ProRes are included with FFMPEG (see below)
   It's used for TTA, FLAC, W64 and AIFF audio encoding and also ensures valid input for every other encoder.<br>
   Also used to extract existing audio track from other releases/containers.<br>
   Oh and of course used for FFV1 lossless video encoding.<br><br>
-  If you're interested in AAC encoding via [FDK AAC](https://trac.ffmpeg.org/wiki/Encode/AAC#fdk_aac) you might be interested in non-free builds like [my own](https://github.com/Vodes/FFmpeg-Builds) on GitHub or [on scoop](https://scoop.sh/#/apps?q=ffmpeg+ytdlp+nonfree).
+  If you're interested in AAC encoding via [FDK AAC](https://trac.ffmpeg.org/wiki/Encode/AAC#fdk_aac) you might be interested in non-free builds like [my own](https://github.com/Vodes/ffmpeg-mt) on GitHub or [on scoop](https://scoop.sh/#/apps?q=ffmpeg+nonfree&p=1&o=false).
 - [eac3to](https://www.videohelp.com/software/eac3to)
 - [SoX](https://sox.sourceforge.net/)
 - [MKVToolNix](https://mkvtoolnix.download/downloads.html)/mkvmerge/mkvextract
