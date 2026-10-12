@@ -37,8 +37,7 @@ FFV1 & ProRes are included with FFMPEG (see below)
   The official builds are yet to receive any updates for whatever reason so for the time being I'd recommend getting builds from [rarewares](https://www.rarewares.org/opus.php).
 - [qaac](https://github.com/nu774/qaac/releases)<br>
   The best encoder for AAC, but it does ALAC aswell.<br>
-  This one h
-  as a few quirks, like needing iTunes either installed or its libraries.<br>
+  This one has a few quirks, like needing iTunes either installed or its libraries.<br>
   [Here's](https://github.com/nu774/qaac/wiki/Installation) some detailed information in that and here are links to both [iTunes Libs](https://github.com/AnimMouse/QTFiles/releases) and a [libFLAC](https://github.com/xiph/flac/releases) you might need.<br>
 - [FLAC (libFLAC)](https://github.com/xiph/flac/releases)<br>
   Used for FLAC encoding
