@@ -4,12 +4,12 @@ version = "0.1.0"
 description = "Documentation and guide for muxtools"
 requires-python = ">=3.13"
 dependencies = [
-    "griffe-pydantic",
-    "mkdocstrings-python",
+    "griffe-pydantic~=1.3.2",
+    "mkdocstrings-python~=2.0.9",
     "muxtools",
     "vodesfunc",
     "vsmuxtools",
-    "zensical>=0.0.60,<0.1",
+    "zensical~=0.0.70",
 ]
 
 [tool.uv.sources]
