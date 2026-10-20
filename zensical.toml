@@ -64,10 +64,14 @@ nav = [
         { "video" = [
             { "encoders" = [
                 { "base" = "vs-muxtools/video/encoders/base.md" },
+                { "noise" = "vs-muxtools/video/encoders/noise.md" },
                 { "standalone" = "vs-muxtools/video/encoders/standalone.md" },
                 { "ffmpeg" = "vs-muxtools/video/encoders/ffmpeg.md" },
                 { "intermediary" = "vs-muxtools/video/encoders/intermediary.md" },
                 { "types" = "vs-muxtools/video/encoders/types.md" },
+            ] },
+            { "hdr" = [
+                { "helpers" = "vs-muxtools/video/hdr/helpers.md" },
             ] },
             { "settings" = "vs-muxtools/video/settings.md" },
             { "testing" = "vs-muxtools/video/testing.md" },
