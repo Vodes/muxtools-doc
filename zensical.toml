@@ -22,9 +22,9 @@ nav = [
         { "Adapting a subkt project" = "examples/adapt-subkt.md" },
         { "Example encode script" = "examples/sample-encode-script.md" },
     ] },
-    { "API Reference" = [
-        { "Bitstream filters" = "muxtools/helpers/bitstream_filters.md" },
-    ] },
+    ##{ "API Reference" = [
+    ##    { "Bitstream filters" = "muxtools/helpers/bitstream_filters.md" },
+    ##] },
     { "Unrelated Stuff" = [
         { "How to no config issue" = "misc/config-issue.md" },
         { "Wav/PCM Ramblings" = "misc/wav-and-friends.md" },
@@ -53,8 +53,8 @@ modules = [
 ]
 nav_section_title = "API Reference"
 api_root_uri = "reference"
-# This module is documented by the custom page listed in nav.
-exclude = ["muxtools.helpers.bsf"]
+# This module can be documented by the custom page listed in nav.
+# exclude = ["muxtools.helpers.bsf"]
 
 [project.plugins.api-autonav.module_options.'^muxtools\.audio\.preprocess$']
 show_if_no_docstring = true
