@@ -13,6 +13,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
+griffe-pydantic = { git = "https://github.com/Vodes/griffe-pydantic.git", branch="dev" }
 muxtools = { git = "https://github.com/Jaded-Encoding-Thaumaturgy/muxtools.git" }
 vodesfunc = { git = "https://github.com/Vodes/vodesfunc.git" }
 vsmuxtools = { git = "https://github.com/Jaded-Encoding-Thaumaturgy/vs-muxtools.git" }

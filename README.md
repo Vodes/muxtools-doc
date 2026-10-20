@@ -11,14 +11,17 @@ For a production build, replace the last command with
 Rerun the preparation step after updating dependencies or editing their sources.
 It copies the installed packages into the ignored `.api-sources/` directory,
 including packages installed in editable mode.
+`docs/templates` is explicitly watched so mkdocstrings template edits also
+invalidate cached API pages during preview.
 
 ## Module pages
 
 `api-autonav` generates module pages and navigation under `reference/`.
 The global mkdocstrings defaults in `zensical.toml` use source order and hide
-objects without docstrings. If a module would otherwise have no visible contents,
+objects without docstrings. If a module would otherwise have no visible members,
 the module template retries with `show_if_no_docstring = true`, keeping the
-configured member filters. Modules with visible documentation keep the default.
+configured member filters. A module-level docstring does not prevent this fallback;
+modules with visible documented members keep the default.
 Set exceptions with `module_options`:
 
 ```toml

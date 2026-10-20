@@ -6,17 +6,15 @@
   This block renders the source code for the class.
   -#}
   {% if config.show_source %}
-    {% if config.merge_init_into_class %}
-      {% if "__init__" in all_members and all_members["__init__"].source %}
-        {% with init = all_members["__init__"] %}
-          <details class="quote">
-            <summary>Source code in <code>
-              {{ init.relative_package_filepath }}
-            </code></summary>
-            {{ init.source|highlight(language="python", linestart=init.lineno or 0, linenums=True) }}
-          </details>
-        {% endwith %}
-      {% endif %}
+    {% if config.merge_init_into_class and "__init__" in all_members and all_members["__init__"].source %}
+      {% with init = all_members["__init__"] %}
+        <details class="quote">
+          <summary>Source code in <code>
+            {{ init.relative_package_filepath }}
+          </code></summary>
+          {{ init.source|highlight(language="python", linestart=init.lineno or 0, linenums=True) }}
+        </details>
+      {% endwith %}
     {% elif class.source %}
       <details class="quote">
         <summary>Source code in <code>
