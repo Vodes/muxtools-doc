@@ -60,8 +60,11 @@ These convert the File types to their respective track types. This will be neede
 
 ## Dolby Vision & HDR10+
 
-The `x265` and `SVTAV1` encoders can pass through Dolby Vision and HDR10+ metadata.<br>
-Static HDR10 metadata is picked up automatically from the first frame of the clip, so you generally don't have to do anything for that.
+The `x265` and `SVTAV1` encoders can pass through Dolby Vision and HDR10+ metadata.
+
+Static HDR10 metadata is picked up automatically from the first frame of the clip, so you generally don't have to do anything for that.<br>
+This includes FFMpeg based encoders, such as `FFV1` and `ProRes`.<br>
+They **don't** support Dolby Vision or HDR10+ directly but can still be used for intermediaries on *Profile 8* by using them as the HDR10 base-layer and passing the other two metadatas to the target encoder(s) separately.
 
 For the dynamic metadata you first create a helper from the source and pass it to the encoder.
 This will take care of extracting the metadata and matching it to the source trim.
@@ -137,7 +140,7 @@ vs-muxtools **0.2.0+** has convenience classes for creating an intermediary and 
 ```py
 # Encode clip to FFV1 first and then to the list of encoders (x265 and SVTAV1)
 IntermediaryEncoder(
-    LosslessX264(LosslessPreset.SPEED),
+    FFV1(LosslessPreset.SPEED),
     [
         x265(settings_builder_x265("veryslow", 13.5)),
         SVTAV1(4, 18),
