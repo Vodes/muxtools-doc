@@ -54,8 +54,15 @@ modules = [
 ]
 nav_section_title = "API Reference"
 api_root_uri = "reference"
-# This module can be documented by the custom page listed in nav.
-# exclude = ["muxtools.helpers.bsf"]
+exclude = [
+    # Exact package matches skip __init__.py pages but keep their submodules.
+    're:^(muxtools|vsmuxtools|vodesfunc)$',
+    're:^muxtools\.(audio|helpers|helpers\.bsf|misc|muxing|subtitle|utils|utils\.binaries)$',
+    're:^vsmuxtools\.(extension|utils|video|video\.encoders|video\.hdr)$',
+    're:^vodesfunc\.rescale_ext$',
+    # This module can be documented by the custom page listed in nav.
+    # "muxtools.helpers.bsf",
+]
 
 [project.plugins.api-autonav.module_options.'^muxtools\.audio\.preprocess$']
 show_if_no_docstring = true
@@ -129,7 +136,7 @@ show_signature = false
 "vodesfunc/scale.md" = "reference/vodesfunc/scale.md"
 "vodesfunc/spikefinder.md" = "reference/vodesfunc/spikefinder.md"
 "vodesfunc/util.md" = "reference/vodesfunc/util.md"
-"vs-muxtools/extension.md" = "reference/vsmuxtools/extension/index.md"
+"vs-muxtools/extension.md" = "reference/vsmuxtools/extension/audio.md"
 "vs-muxtools/utils/src.md" = "reference/vsmuxtools/utils/source.md"
 "vs-muxtools/video/encoders/base.md" = "reference/vsmuxtools/video/encoders/base.md"
 "vs-muxtools/video/encoders/ffmpeg.md" = "reference/vsmuxtools/video/encoders/ffmpeg.md"

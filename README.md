@@ -17,6 +17,10 @@ invalidate cached API pages during preview.
 ## Module pages
 
 `api-autonav` generates module pages and navigation under `reference/`.
+Package index pages from `__init__.py` are excluded. Packages remain navigation
+groups, while API links resolve to the modules defining the objects.
+The `exclude` patterns in `zensical.toml` match packages exactly; add new
+subpackages there when needed.
 The global mkdocstrings defaults in `zensical.toml` use source order and hide
 objects without docstrings. If a module would otherwise have no visible members,
 the module template retries with `show_if_no_docstring = true`, keeping the
