@@ -1,0 +1,40 @@
+/* All of these (until the next comment) get rid of some of the padding on Navigation and ToC entries. */
+.md-sidebar .md-nav__list {
+  gap: 0.1rem;
+}
+
+.md-sidebar .md-nav__link {
+  padding: 0.25rem 0.65rem;
+  margin-inline: 0.15rem;
+}
+
+.md-sidebar .md-nav__link .md-nav__link {
+  padding: 0;
+  margin: 0;
+}
+
+.md-sidebar .md-nav--secondary .md-nav__title {
+  padding: 0.3rem 0.65rem;
+  margin-inline: 0.15rem;
+}
+
+.md-sidebar .md-nav--secondary .md-nav__link {
+  padding-block: 0.2rem;
+}
+
+/* Prevent ToC text from spilling into the next line. */
+.md-sidebar--secondary .md-ellipsis {
+  white-space: nowrap;
+}
+
+/* Only on Desktop */
+@media screen and (min-width: 76.25em) {
+  /* Kinda controls the padding left of the navigation and right of the ToC  */
+  .md-grid {
+    max-width: calc(32% + 42.7rem);
+  }
+
+  .md-sidebar {
+    padding-block: 0.8rem;
+  }
+}

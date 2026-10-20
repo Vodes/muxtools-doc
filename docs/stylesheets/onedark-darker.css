@@ -1,0 +1,68 @@
+/* Palette: https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua (darker) */
+[data-md-color-scheme="slate"] {
+  --md-code-fg-color: #a0a8b7;
+  --md-code-bg-color: #1f2329;
+  --md-code-bg-color--light: #1f2329e6;
+  --md-code-bg-color--lighter: #1f23298a;
+  --md-code-hl-color: #4fa6ed;
+  --md-code-hl-color--light: #282c34;
+  --md-code-hl-number-color: #cc9057;
+  --md-code-hl-special-color: #e55561;
+  --md-code-hl-function-color: #4fa6ed;
+  --md-code-hl-constant-color: #cc9057;
+  --md-code-hl-keyword-color: #bf68d9;
+  --md-code-hl-string-color: #8ebd6b;
+  --md-code-hl-name-color: #a0a8b7;
+  --md-code-hl-operator-color: #a0a8b7;
+  --md-code-hl-punctuation-color: #7a818e;
+  --md-code-hl-comment-color: #535965;
+  --md-code-hl-generic-color: #a0a8b7;
+  --md-code-hl-variable-color: #a0a8b7;
+}
+
+/* Zensical groups types with functions and docstrings with comments. */
+[data-md-color-scheme="slate"] .highlight :is(.nc, .ne, .nn, .kt) {
+  color: #e2b86b;
+}
+
+[data-md-color-scheme="slate"] .highlight :is(.na, .nb, .nd, .ni) {
+  color: #48b0bd;
+}
+
+[data-md-color-scheme="slate"] .highlight .bp {
+  color: #e55561;
+}
+
+[data-md-color-scheme="slate"] .highlight :is(.kc, .sr) {
+  color: #cc9057;
+}
+
+[data-md-color-scheme="slate"] .highlight .cp {
+  color: #bf68d9;
+}
+
+[data-md-color-scheme="slate"] .highlight .sd {
+  color: #8ebd6b;
+}
+
+[data-md-color-scheme="slate"] .highlight :is(.c, .c1, .ch, .cm, .cs) {
+  font-style: italic;
+}
+
+[data-md-color-scheme="slate"] .highlight .linenodiv pre,
+[data-md-color-scheme="slate"] .highlight [data-linenos]::before {
+  color: #535965;
+}
+
+[data-md-color-scheme="slate"] .highlight {
+  --md-typeset-ins-color: #272e23;
+  --md-typeset-del-color: #2d2223;
+}
+
+[data-md-color-scheme="slate"] .highlight .gi {
+  color: #8ebd6b;
+}
+
+[data-md-color-scheme="slate"] .highlight .gd {
+  color: #e55561;
+}

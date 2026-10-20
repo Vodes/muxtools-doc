@@ -154,5 +154,5 @@ IntermediaryEncoder(
 ).encode(clip)
 ```
 
-There's also a standalone [ProResIntermediary](/vs-muxtools/video/encoders/intermediary/#vsmuxtools.video.encoders.intermediary.ProResIntermediary) class that automatically handles conversion to and from 422.<br>
+There's also a standalone [ProResIntermediary](/reference/vsmuxtools/video/encoders/intermediary/#vsmuxtools.video.encoders.intermediary.ProResIntermediary) class that automatically handles conversion to and from 422.<br>
 The approach may still be very flawed but it didn't cause issues at a quick glance.

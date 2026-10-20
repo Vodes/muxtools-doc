@@ -1,6 +1,6 @@
 ## Subtitles
 
-Uh... there are a lot of subtitle processing functions in the [SubFile class](/muxtools/subtitle/sub/#muxtools.subtitle.sub.SubFile).<br>
+Uh... there are a lot of subtitle processing functions in the [SubFile class](/reference/muxtools/subtitle/sub/#muxtools.subtitle.sub.SubFile).<br>
 It would probably take a lot of time to explain them here again so go read the docs.
 
 ### Basic Usage
@@ -35,7 +35,7 @@ To get the filepath you simply do `subtitle.file`.<br><br>
 #### Merging and shifting
 Shifting and merging with syncs *should* be done with timestamps.<br>
 You can pass a `timesource` to every function that works with frame <-> conversions.<br>
-Subtitles specifically can also fetch a default from the `Setup`. [See docs](/muxtools/main/#muxtools.main.Setup.set_default_sub_timesource).
+Subtitles specifically can also fetch a default from the `Setup`. [See docs](/reference/muxtools/main/#muxtools.main.Setup.set_default_sub_timesource).
 
 If you never set one in either the functions or the Setup it will assume FPS timestamps with `24000/1001` and a timescale that's the usual on MKV files.<br>
 And also print a warning because you probably shouldn't be doing that.
@@ -51,13 +51,13 @@ subtitle.merge(
 
 If you want to match SubKt in its merging with syncpoints behavior you need to set the `shift_mode` param.<br>
 SubKt shifts by `TIME` directly without considering frames or a video file at all.<br>
-You can see the available ones [in the docs](/muxtools/subtitle/basesub/#muxtools.subtitle.basesub.ShiftMode).
+You can see the available ones [in the docs](/reference/muxtools/subtitle/basesub/#muxtools.subtitle.basesub.ShiftMode).
 
 There's also a full SubKt project port in the [examples section](/examples/#adapting-a-subkt-project-to-muxtools).
 
 ## Chapters
 
-As usual, check the [docs](/muxtools/chapters) for all the available functions you can use in Chapters.
+As usual, check the [docs](/reference/muxtools/misc/chapters/) for all the available functions you can use in Chapters.
 
 Note that this doesn't include the src_file part because it's not in *muxtools*.<br>
 For that, check [this](https://github.com/Irrational-Encoding-Wizardry/vs-muxtools/blob/master/vsmuxtools/extension/chapters.py).

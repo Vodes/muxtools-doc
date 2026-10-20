@@ -14,12 +14,12 @@ Here I should maybe also mention the available "tokens" you can use for the file
 - `$title$`<br>
     Token for the episode title. This will only work if you use the [TMDB](#tmdb) integration.
 - `$title_sanitized$`<br>
-    Same as above but with the *title_sanitization* param in [TMDBConfig](/muxtools/muxing/tmdb/#muxtools.muxing.tmdb.TmdbConfig) applied to the string. 
+    Same as above but with the *title_sanitization* param in [TMDBConfig](/reference/muxtools/muxing/tmdb/#muxtools.muxing.tmdb.TmdbConfig) applied to the string.
 
 You can also use *any* variable that's declared in Setup as a token.<br>
 This also includes *any* "unknown" ones that you might have configured in the ini file.
 
-For example: If you have a `group_name` variable in the ini or set via [Setup.edit](https://muxtools.vodes.pw/muxtools/main/#muxtools.main.Setup.edit) you can just use `$group_name$` as a token in filenames or titles.
+For example: If you have a `group_name` variable in the ini or set via [Setup.edit](https://muxtools.vodes.pw/reference/muxtools/main/#muxtools.main.Setup.edit) you can just use `$group_name$` as a token in filenames or titles.
 
 ## Dynamic metadata tokens
 
@@ -101,7 +101,7 @@ mux(
 
 ## TMDB
 
-This package has a TMDB Integration so you can have episode titles and other [various metadata](/muxtools/muxing/tmdb/#muxtools.muxing.tmdb.TmdbConfig) in your mux.
+This package has a TMDB Integration so you can have episode titles and other [various metadata](/reference/muxtools/muxing/tmdb/#muxtools.muxing.tmdb.TmdbConfig) in your mux.
 
 ```py
 from vsmuxtools import mux, TitleTMDB, TmdbConfig, TMDBOrder

@@ -1,0 +1,17 @@
+{% extends "_base/module.html.jinja" %}
+
+{% block contents scoped %}
+  {% set contents = super() %}
+  {% if root and config.extra.get("show_undocumented_if_empty", false)
+      and not config.show_if_no_docstring and not contents|striptags|trim %}
+    {# Signature filters require a PythonOptions instance rather than a dict. #}
+    {% with config = config.__class__(**dict(config.__dict__, show_if_no_docstring=true)) %}
+      {% include "summary.html.jinja" with context %}
+      {% set root = false %}
+      {% set heading_level = heading_level + 1 %}
+      {% include "children.html.jinja" with context %}
+    {% endwith %}
+  {% else %}
+    {{ contents }}
+  {% endif %}
+{% endblock contents %}

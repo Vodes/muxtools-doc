@@ -7,6 +7,8 @@ on:
       - 'zensical.toml'
       - 'pyproject.toml'
       - 'uv.lock'
+      - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/build.yml'
   workflow_dispatch:
 
@@ -24,6 +26,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
       - run: uv sync --frozen
+      - run: uv run --frozen python scripts/prepare_api.py
       - run: uv run --frozen zensical build --clean --strict
       - uses: actions/upload-pages-artifact@v5
         with:

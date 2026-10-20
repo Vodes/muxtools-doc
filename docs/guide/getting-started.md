@@ -3,7 +3,7 @@ Some necessities used/needed for essentially every script<br>
 
 ## Setup
 
-For detailed information on every parameter, check the [docs](/muxtools/main/#muxtools.main.Setup).
+For detailed information on every parameter, check the [docs](/reference/muxtools/main/#muxtools.main.Setup).
 
 ```py
 from vsmuxtools import Setup
