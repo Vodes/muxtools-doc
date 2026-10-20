@@ -82,6 +82,7 @@ video_hevc = x265(
 ```
 
 You'll need `dovi_tool` and/or `hdr10plus_tool` installed for this to work.<br>
+Both available through the [binary management](binary-management.md).<br>
 You can also use existing sidecars with `DolbyVision.from_file("RPU.bin", profile="8.1")` and `HDR10Plus.from_file("metadata.json")`.
 
 `x265` can keep Profile 5, 8.1, 8.2 and 8.4 metadata as-is, but Profile 7 needs to be converted to 8.1 first.<br>
@@ -119,7 +120,7 @@ from vsmuxtools import SVTAV1, mux
 video_av1 = SVTAV1(
     dolby_vision=dovi,
     hdr10plus=hdr10plus,
-).encode(output, "encoded.ivf")
+).encode(output)
 
 mux(video_av1.to_track(), outfile="encoded.mkv")
 ```
