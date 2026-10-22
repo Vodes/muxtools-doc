@@ -100,7 +100,57 @@ If you already have everything installed yourself, initialize with `-s` or set `
 Muxtools will then look in PATH instead of downloading anything. `prefer = "global"` does the same thing as local mode but uses your shared user-global installs.
 
 !!! warning
-    Both the **local** and **global** scope will still let your scripts fallback to what may be in `PATH` if no versions are declared in the project. 
+    Both the **local** and **global** scope can still let your scripts fall back to `PATH` if no managed package is declared for an executable.<br>
+    Add `strict = true` to your `[tool.muxtools.binaries]` or `[muxtools.binaries]` section to stop that. It defaults to `false`.<br>
+    Strict mode needs `prefer = "local"` or `"global"`. Combining it with `prefer = "system"` is an error.
 
 `--offline` works with `add`, `install` and `sync` when you only want to use the cached catalog and binaries you already have.<br>
 Not every dependency has a managed package yet, so check [External Dependencies](external-dependencies.md) when you need something that isn't here.
+
+## Using the installed binaries
+
+You can also use the managed binaries straight from your terminal with `muxtools proxy`.
+
+```sh
+muxtools proxy ffmpeg -version
+muxtools proxy --package svtav1-essential SvtAv1EncApp --version
+```
+
+It'll follow your project config, including the versions you've picked.<br>
+Without a project config or environment settings, it'll use the newest globally installed version instead.
+
+The proxy always uses strict resolution, even if your config has `strict = false`.<br>
+It won't search PATH and won't work with `prefer = "system"`.
+
+Put `--package` (or `-p`) before the executable. Everything after the executable gets passed along as-is, including things like `--help`.<br>
+The proxy only uses what's already installed, so run `muxtools binaries sync` or `muxtools binaries install -g PACKAGE` first if needed.
+
+The `MUXTOOLS_BINARIES_GLOBAL_PATH`, `MUXTOOLS_BINARIES_MANAGED_GLOBAL` and `MUXTOOLS_BINARIES_PACKAGES` environment variables work here too.<br>
+So you can use the same proxy commands in a container after syncing its packages.<br>
+Set `MUXTOOLS_BINARIES_STRICT=1` if scripts using those global binaries should also stop falling back to PATH. A project config still takes priority over the environment settings.
+
+### Picking a package in scripts
+
+Some packages provide the same executable. Both SVT-AV1 packages use `SvtAv1EncApp` for example.<br>
+If you have both installed, you can pick one for part of your script with `use_binary_package`:
+
+```py
+from muxtools import get_executable, use_binary_package
+from vsmuxtools import SVTAV1
+
+with use_binary_package("svtav1-essential"):
+    video = SVTAV1("--preset 4 --crf 20").encode(filtered)
+
+# If you just want the path to one executable
+encoder = get_executable("SvtAv1EncApp", package="svtav1-essential")
+```
+
+Only the executables provided by that package are affected. Anything else, like ffmpeg or mkvmerge, works as usual.<br>
+Once you leave the `with` block, the previous selection is restored. You can nest these blocks too, and an explicit `package=` takes priority over the block you're in.
+
+Use the actual package name here, without a version after it. Your config's version constraints still apply.<br>
+The package needs to be installed in the project's selected scope, or globally if there's no config. This doesn't work with `prefer = "system"`, since PATH can't tell muxtools which package an executable came from.
+
+!!! note
+    Custom `vof_exe_*` executable paths still take priority over package selection.<br>
+    Otherwise, if the selected package can't provide the executable, muxtools will error instead of quietly using a different package or PATH.
