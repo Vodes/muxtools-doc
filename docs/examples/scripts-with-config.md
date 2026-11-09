@@ -1,10 +1,12 @@
 ## Muxing of my Jigokuraku fansub
 
-<details open>
-  <summary>config.ini</summary>
+Run `muxtools binaries sync` in the project directory to install the configured binaries.
 
-```ini
---8<-- "examples/jigoku/config.ini"
+<details open>
+  <summary>muxtools.toml</summary>
+
+```toml
+--8<-- "examples/jigoku/muxtools.toml"
 ```
 
 </details>
@@ -19,10 +21,10 @@
 ## [Aergia] Ristorante Paradiso mux script
 
 <details open>
-  <summary>config.ini</summary>
+  <summary>muxtools.toml</summary>
 
-```ini
---8<-- "examples/wia-ristorante/config.ini"
+```toml
+--8<-- "examples/wia-ristorante/muxtools.toml"
 ```
 
 </details>

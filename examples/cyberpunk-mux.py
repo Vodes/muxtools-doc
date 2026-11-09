@@ -1,7 +1,7 @@
 from muxtools import Setup, GlobSearch, Premux, SubFile, mux, TmdbConfig
 
 for i in range(1, 11):
-    # Basic Setup for every episode without a config file
+    # Basic Setup for every episode
     setup = Setup(
         f"{i:02d}",  # Format to have padded zeros
         None,
@@ -33,7 +33,7 @@ for i in range(1, 11):
     sub_ger = SubFile.from_mkv(nfweb.paths, 1).clean_styles()
     sub_ger_signs = SubFile.from_mkv(nfweb.paths, 0).clean_styles()
 
-    # Every font collector call will just dump them into the workdir and then return all including ones are already there.
+    # Each call returns all fonts collected into the workdir so far.
     sub_ger_signs.collect_fonts()
     sub_en.collect_fonts()
     fonts = sub_ger.collect_fonts()

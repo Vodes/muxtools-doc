@@ -40,10 +40,10 @@ In terms of video encoders I mostly implemented this to serve SVTAV1 and the FFM
 
 You can for example do something like
 ```py
-SVTAV1(qp_clip=src, sharpness=3, film_grain=3, tune=3, variance_boost_strength=3, variance_octile=5, frame_luma_bias=20)
+SVTAV1(sd_clip=src, sharpness=3, film_grain=3, tune=3, variance_boost_strength=3, variance_octile=5, frame_luma_bias=20)
 ```
 and you will find that most of these params are not actually defined in the `SVTAV1` class constructor.<br>
-They will however still get passed to it as `--sharpness 3 --film-grain 3 --variance-boost-strength 3 --variance-octile 5 --frame-luma-bias 20`.
+They will however still get passed to it as `--sharpness 3 --film-grain 3 --tune 3 --variance-boost-strength 3 --variance-octile 5 --frame-luma-bias 20`.
 
 This will also work for x264/5 but considering the settings there are just a string to begin with, I don't see much of a point.
 

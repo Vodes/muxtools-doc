@@ -1,0 +1,11 @@
+[muxtools]
+bdmv_dir = "./"
+show_name = "Jigokuraku"
+clean_work_dirs = true
+out_dir = "muxed"
+out_name = "[Nirvana] $show$ - S01E$ep$ [WEB 1080p HEVC] [$crc32$]"
+mkv_title_naming = "Hell's Paradise - $ep$ - $title$"
+
+[muxtools.binaries]
+prefer = "local"
+packages = ["ffmpeg", "mkvtoolnix"]

@@ -8,7 +8,6 @@ for i in range(1, 11 + 1):
     setup = Setup(
         f"{i:02d}",
         show_name="Ristorante Paradiso",
-        allow_binary_download=False,
         clean_work_dirs=True,
     )
 
@@ -29,7 +28,6 @@ for i in range(len(ncs)):
     setup = Setup(
         ncs[i],
         show_name="Ristorante Paradiso",
-        allow_binary_download=False,
         clean_work_dirs=True,
     )
 

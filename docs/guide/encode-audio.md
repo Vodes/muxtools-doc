@@ -62,7 +62,7 @@ audio = do_audio(ITBD, 0)
 # If you want to choose everything
 from vsmuxtools import FFMpeg, Sox, TrueAudio
 
-audio = do_audio(JPBD, track=0, extractor=FFMpeg.Extractor(preserve_delay=False), trimmer=Sox(), encoder=TrueAudio())
+audio = do_audio(ITBD, track=0, extractor=FFMpeg.Extractor(preserve_delay=False), trimmer=Sox(), encoder=TrueAudio())
 ```
 
 ### Step by step
@@ -71,18 +71,19 @@ Of course you're not forced to use `do_audio`.
 
 ```py
 from vsmuxtools import FFMpeg, Sox, FLAC, DitherType, src_file, Resample
+from fractions import Fraction
 
 ITBD = src_file(R"00008.m2ts", trim=(24, -24))
 
 audio = FFMpeg.Extractor(track=1).extract_audio(ITBD.file)
-audio = Sox(trim=[(24, 500), (800, 1245)], fps=Fraction(24000, 1001)).trim_audio(audio)
+audio = Sox(trim=[(24, 500), (800, 1245)], timesource=Fraction(24000, 1001)).trim_audio(audio)
 audio = FLAC(preprocess=Resample(dither=DitherType.LOW_SHIBATA)).encode_audio(audio)
 ```
 
 All of those `audio` variables are a `AudioFile` object.<br>
 To get the filepath you simply do `audio.file`.<br><br>
 
-Same deal as with the [encodes](/guide/encode-video) these also have a `to_track()` function to create a track with metadata. (Defaults to `lang='jp', default=True, forced=False`)
+Same deal as with the [encodes](/guide/encode-video) these also have a `to_track()` function to create a track with metadata. (Defaults to `lang='ja', default=True, forced=False`)
 
 ### Preprocessing
 

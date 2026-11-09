@@ -10,7 +10,7 @@ if not typesetting:
     typesetting = GlobSearch("*Sign*.ass", dir=f"./{setup.episode}/").paths
 
 songs = ["./songs/OP.ass", "./songs/ED.ass"]
-sub = SubFile([dialogue.paths, typesetting]) \
+sub = SubFile([*dialogue.paths, *typesetting]) \
     .merge(songs[0], "opsync").merge(songs[1], "edsync")
 
 fonts = sub.collect_fonts()

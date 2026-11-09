@@ -3,18 +3,18 @@
 For available and/or recommended encoders, see [External Dependencies](external-dependencies.md).<br>
 All of them are available through the [binary management](binary-management.md).
 
-The `SVTAV1` class will use whichever `SvtAv1EncApp` comes first in your *managed* binaries or falls back to the first one in your **PATH**.<br>
-So if you want to use managed SVT-AV1-Essential, only add that to your binary config.
+The `SVTAV1` class resolves `SvtAv1EncApp` through your binary config or **PATH**.<br>
+See [binary management](binary-management.md#picking-a-package-in-scripts) for selecting a particular managed package.
 
 The `FFV1` and `ProRes` classes just use their respective encoder in FFMpeg.
 
 ---------
 ## Basic Usage
 ```py
-from vsmuxtools import src_file, x265, x264, FFV1, LosslessX264, LosslessPreset, settings_builder_x265, settings_builder_x264
+from vsmuxtools import src_file, SourceFilter, x265, x264, FFV1, LosslessX264, LosslessPreset, settings_builder_x265, settings_builder_x264
 from vstools import vs, core, finalize_clip
 
-JPBD = src_file(R"F:\BDMV\Main Disc\BDMV\STREAM\00002.m2ts", True, (24, 500))
+JPBD = src_file(R"F:\BDMV\Main Disc\BDMV\STREAM\00002.m2ts", trim=(24, 500), sourcefilter=SourceFilter.LSMASH, preview_sourcefilter=None)
 
 # This calls initialize_clip from vstools which creates a 16 bit clip to work with
 src = JPBD.init_cut()
@@ -138,12 +138,15 @@ The encoder binaries differ quite a lot here, so make sure your build understand
 vs-muxtools **0.2.0+** has convenience classes for creating an intermediary and encoding that to one or many targets.
 
 ```py
+from vsmuxtools import IntermediaryEncoder, SVTAV1
+from vskernels import Hermite
+
 # Encode clip to FFV1 first and then to the list of encoders (x265 and SVTAV1)
 IntermediaryEncoder(
     FFV1(LosslessPreset.SPEED),
     [
         x265(settings_builder_x265("veryslow", 13.5)),
-        SVTAV1(4, 18),
+        SVTAV1(preset=4, crf=18),
     ],
 ).encode(clip)
 
@@ -153,7 +156,7 @@ IntermediaryEncoder(
     LosslessX264(LosslessPreset.SPEED),
     [
         x265(settings_builder_x265("veryslow", 13.5)),
-        (SVTAV1(4, 18), lambda clip: Hermite.scale(clip, 1280, 720)), # Downscales the intermediary and outputs that to SVTAV1
+        (SVTAV1(preset=4, crf=18), lambda clip: Hermite.scale(clip, 1280, 720)), # Downscales the intermediary and outputs that to SVTAV1
     ],
 ).encode(clip)
 ```

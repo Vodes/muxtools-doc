@@ -26,12 +26,13 @@ if op_start_frame != -1:
     lol_deband.append((op_start_frame + 1383, op_start_frame + 1399))
     zone_slightly.append((op_start_frame, op_start_frame + 2157))
 
-ITBD = FileInfo(bdmv.get_episode_itbd(), force_lsmas=True, trim=(12, -12))
-DEBD = FileInfo(bdmv.get_episode_debd(), force_lsmas=True)
-UKBD = FileInfo(bdmv.get_episode_ukbd(), force_lsmas=True)
+ITBD = FileInfo(bdmv.get_episode_itbd(), sourcefilter=SourceFilter.LSMASH, preview_sourcefilter=None, trim=(12, -12))
+DEBD = FileInfo(bdmv.get_episode_debd(), sourcefilter=SourceFilter.LSMASH, preview_sourcefilter=None)
+UKBD = FileInfo(bdmv.get_episode_ukbd(), sourcefilter=SourceFilter.LSMASH, preview_sourcefilter=None)
 KAIZOKU = FileInfo(
     GlobSearch(f"*Jujutsu Kaisen - {setup.episode}*.mkv", dir=R"\\diablo\Vault\Misc\Media\[Kaizoku] Jujutsu Kaisen (BD 1080p)"),
-    force_lsmas=True,
+    sourcefilter=SourceFilter.LSMASH,
+    preview_sourcefilter=None,
 )
 
 filtered = common.filter_chain(ITBD.init_cut(), stronger_deband, heavy_aa, wtf, lol_deband)

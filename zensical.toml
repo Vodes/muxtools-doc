@@ -19,7 +19,7 @@ nav = [
     ] },
     { "Examples" = [
         { "Example scripts with config" = "examples/scripts-with-config.md" },
-        { "Example mux without config" = "examples/random-cyberpunk-mux.md" },
+        { "Example muxes without config" = "examples/scripts-without-config.md" },
         { "Adapting a subkt project" = "examples/adapt-subkt.md" },
         { "Example encode script" = "examples/sample-encode-script.md" },
     ] },
@@ -102,8 +102,9 @@ show_signature = false
 show_if_no_docstring = true
 show_signature = false
 
-# Preserve URLs of the former hand-written module pages.
+# Preserve old URLs.
 [project.plugins.redirects.redirect_maps]
+"examples/random-cyberpunk-mux.md" = "examples/scripts-without-config.md"
 "muxtools/audio/audioutils.md" = "reference/muxtools/audio/audioutils.md"
 "muxtools/audio/encoders.md" = "reference/muxtools/audio/encoders.md"
 "muxtools/audio/extractors.md" = "reference/muxtools/audio/extractors.md"

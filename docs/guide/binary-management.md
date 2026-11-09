@@ -139,7 +139,7 @@ from muxtools import get_executable, use_binary_package
 from vsmuxtools import SVTAV1
 
 with use_binary_package("svtav1-essential"):
-    video = SVTAV1("--preset 4 --crf 20").encode(filtered)
+    video = SVTAV1(preset=4, crf=20).encode(filtered)
 
 # If you just want the path to one executable
 encoder = get_executable("SvtAv1EncApp", package="svtav1-essential")

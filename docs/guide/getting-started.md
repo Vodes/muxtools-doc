@@ -28,10 +28,10 @@ Simple convenience wrapper for sources.
 
 ```py
 from vstools import core
-from vsmuxtools import src_file # Other aliases for this are SRC_FILE and FileInfo
+from vsmuxtools import src_file, SourceFilter # Other aliases for src_file are SRC_FILE and FileInfo
 
-# force_lsmas simply uses lsmashsource if True and otherwise tries to use DGIndexNV
-JPBD = src_file(R"F:\BDMV\Main Disc\BDMV\STREAM\00002.m2ts", force_lsmas=True)
+# Use L-SMASH both when previewing and when encoding
+JPBD = src_file(R"F:\BDMV\Main Disc\BDMV\STREAM\00002.m2ts", sourcefilter=SourceFilter.LSMASH, preview_sourcefilter=None)
 
 # You can also set a initial trim, in this example it'll make the cut clip start at the 24th frame 
 # and cut off 24 frames at the end
